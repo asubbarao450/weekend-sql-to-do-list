@@ -20,25 +20,47 @@ function savetodo(todotoAdd) {
 }
 
 function rendertodo(todos) {
-    const todoshelf = document.getElementById('todoshelf')
+    let todoshelf = document.getElementById('todoshelf')
     todoshelf.innerHTML = '';
 
-    for (let i = 0; i < todos.length; i += 1) {
-        let todo = todos[i];
+    console.log(todos)
+   
+    for(todo of todos){
         // For each book, append a new row to our table
+
+        if(todo.isComplete === false){
         todoshelf.innerHTML += (`
-        <tr>
+        <tr data-testid="toDoItem">
         <td>${todo.id}</td>
-        <td>${todo.item}</td>
+        <td>${todo.text}</td>
       <td>${todo.isComplete}</td>
-      <td><button onClick="markComplete(${todo.isComplete}, ${todo.id})">
+      <td><button data-testid="completeButton" onClick="markComplete(${todo.isComplete}, ${todo.id})">
       Mark as Complete
       </button></td>
-      <td><button onClick="deletetodo(${todo.id})">
+      <td><button data-testid="deleteButton" onClick="deletetodo(${todo.id})">
       Delete
   </button></td>
         </tr>
       `);
+        }
+
+        else if(todo.isComplete === true){
+            todoshelf.innerHTML += (`
+            <tr data-testid="toDoItem" class="completed" >
+            <td>${todo.id}</td>
+            <td>${todo.text}</td>
+          <td>${todo.isComplete}</td>
+          <td><button data-testid="completeButton" onClick="markComplete(${todo.isComplete}, ${todo.id})">
+          Mark as Complete
+          </button></td>
+          <td><button data-testid="deleteButton" onClick="deletetodo(${todo.id})">
+          Delete
+      </button></td>
+            </tr>
+          `);
+
+
+        }
     }
 
 }
@@ -65,9 +87,10 @@ function handleSubmit(event) {
 
 
 let todo = {};
-  todo.item = document.getElementById('author').value;
-  todo.isComplete = document.getElementById('title').value;
-  addtodo(todo);
+  todo.text = document.getElementById("toDoTextInput1").value;
+  console.log(todo.text)
+  todo.isComplete = false;
+  savetodo(todo);
 
 }
 

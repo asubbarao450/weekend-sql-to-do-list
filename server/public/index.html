@@ -16,14 +16,24 @@
   <table>
     <thead>
       <tr>
+        <th>Id</th>
         <th>To Do Item</th>
         <th>Complete</th>
-        <th></th>
         <th>Delete</th>
       </tr>
     </thead>
     <tbody id="todoshelf">
     </tbody>
   </table>
+
+
+
+  <section>
+    <h3>Add To Do Item</h3>
+    <label>Enter Text: </label>
+    <input type="text" id="toDoTextInput1" data-testid="toDoTextInput" size="50">
+    
+    <button type="button" onClick="handleSubmit(event)">Submit</button>
+  </section>
 </body>
 </html>
