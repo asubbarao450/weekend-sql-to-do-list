@@ -1,12 +1,17 @@
+
+
 .completed{
 
     background-color: gray;
-    font-size: 12px;
+    font-size: 18px;
     text-decoration: line-through;
 }
 
+/* # (followed by .) takes the highest prefrence*/
+
+
 body {
-    background-color: #caebf2;
+    background-color: #09c4ee;
   }
 
 
@@ -17,6 +22,35 @@ body {
   }
 
 
+  #deleteButton{
+    padding: 14px 30px;
+    text-align: center;
+    background-color: #e92719;
+    font-size: 13px;
+    border-radius: 60%;
+  }
+
+  
+  #submitButton{
+    padding: 14px 30px;
+    text-align: center;
+    background-color: #25cb25;
+    font-size: 13px;
+    border-radius: 60%;
+  }
+
   button:hover {
     box-shadow: 0 10px 15px 0 rgba(2, 142, 249, 0.16);
   }
+
+  table, th, td {
+    border: 2px solid;
+    text-align: center;
+
+    font-size: 25px;
+    width: 70%;
+  }
+
+  tr:hover {
+    background-color: orangered;
+}

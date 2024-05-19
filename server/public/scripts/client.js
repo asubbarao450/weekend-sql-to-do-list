@@ -36,7 +36,7 @@ function rendertodo(todos) {
       <td><button data-testid="completeButton" onClick="markComplete(${todo.isComplete}, ${todo.id})">
       Mark as Complete
       </button></td>
-      <td><button data-testid="deleteButton" onClick="deletetodo(${todo.id})">
+      <td><button data-testid="deleteButton" id="deleteButton" onClick="deletetodo(${todo.id})">
       Delete
   </button></td>
         </tr>
@@ -45,13 +45,13 @@ function rendertodo(todos) {
 
         else if(todo.isComplete === true){
             todoshelf.innerHTML += (`
-            <tr data-testid="toDoItem" class="completed" >
-            <td>${todo.text}</td>
+            <tr data-testid="toDoItem">
+            <td class="completed" data-testid="toDoItem">${todo.text}</td>
           <td>${todo.isComplete}</td>
           <td><button data-testid="completeButton" onClick="markComplete(${todo.isComplete}, ${todo.id})">
           Mark as Complete
           </button></td>
-          <td><button data-testid="deleteButton" onClick="deletetodo(${todo.id})">
+          <td><button data-testid="deleteButton" id="deleteButton" onClick="deletetodo(${todo.id})">
           Delete
       </button></td>
             </tr>
