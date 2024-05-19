@@ -31,7 +31,6 @@ function rendertodo(todos) {
         if(todo.isComplete === false){
         todoshelf.innerHTML += (`
         <tr data-testid="toDoItem">
-        <td>${todo.id}</td>
         <td>${todo.text}</td>
       <td>${todo.isComplete}</td>
       <td><button data-testid="completeButton" onClick="markComplete(${todo.isComplete}, ${todo.id})">
@@ -47,7 +46,6 @@ function rendertodo(todos) {
         else if(todo.isComplete === true){
             todoshelf.innerHTML += (`
             <tr data-testid="toDoItem" class="completed" >
-            <td>${todo.id}</td>
             <td>${todo.text}</td>
           <td>${todo.isComplete}</td>
           <td><button data-testid="completeButton" onClick="markComplete(${todo.isComplete}, ${todo.id})">
@@ -88,7 +86,7 @@ function handleSubmit(event) {
 
 let todo = {};
   todo.text = document.getElementById("toDoTextInput1").value;
-  console.log(todo.text)
+  
   todo.isComplete = false;
   savetodo(todo);
 
@@ -96,7 +94,7 @@ let todo = {};
 
 function markComplete(isComplete, todoid) {
 
-    console.log("Changing isRead...", isComplete, todoid)
+    
 
     // Use axios to send a PUT request to change song rank
     // Send direction & id in URL
@@ -132,7 +130,7 @@ function deletetodo(todoid) {
             refreshtodo();
         }).catch((error) => {
             console.log('Error', error);
-            alert('Something went wrong');
+            alert('Something went wrong delete');
         });
     //needs delete route 
 }

@@ -1,8 +1,22 @@
 .completed{
 
     background-color: gray;
-
     font-size: 12px;
-
     text-decoration: line-through;
 }
+
+body {
+    background-color: #caebf2;
+  }
+
+
+  h1, h2, h3, h4, h5, h6 { 
+    font-family: 'Montserrat', monospace;
+    background: radial-gradient(#ffbc00, #ff65aa);
+    text-align: center;
+  }
+
+
+  button:hover {
+    box-shadow: 0 10px 15px 0 rgba(2, 142, 249, 0.16);
+  }
