@@ -48,7 +48,7 @@ function rendertodo(todos) {
             <tr data-testid="toDoItem">
             <td class="completed" data-testid="toDoItem">${todo.text}</td>
           <td>${todo.isComplete}</td>
-          <td><button data-testid="completeButton" onClick="markComplete(${todo.isComplete}, ${todo.id})">
+          <td><button data-testid="completeButton" id="completeButtonAfterClick" onClick="markComplete(${todo.isComplete}, ${todo.id})">
           Mark as Complete
           </button></td>
           <td><button data-testid="deleteButton" id="deleteButton" onClick="deletetodo(${todo.id})">

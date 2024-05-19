@@ -21,6 +21,11 @@ body {
     text-align: center;
   }
 
+  #completeButtonAfterClick{
+
+    font-size: 2px;
+
+  }
 
   #deleteButton{
     padding: 14px 30px;
@@ -46,7 +51,7 @@ body {
   table, th, td {
     border: 2px solid;
     text-align: center;
-
+    padding: 14px;
     font-size: 25px;
     width: 70%;
   }
