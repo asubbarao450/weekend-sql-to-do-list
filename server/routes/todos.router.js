@@ -60,6 +60,7 @@ router.get('/', (req, res) => {
   
 
     //put will have [todoid] in Array
+    //communication to database
     pool.query(queryText, [todoid])
       .then((result) => {
         res.sendStatus(204)
