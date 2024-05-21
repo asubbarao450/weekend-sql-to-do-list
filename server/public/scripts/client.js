@@ -13,6 +13,7 @@ function onReady() {
         isComplete: false 
     }
 
+    debugger;
     savetodo(first);
     savetodo(second);
 }
