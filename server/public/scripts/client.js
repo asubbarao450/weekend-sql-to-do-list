@@ -1,6 +1,23 @@
 console.log('JS is sourced!');
 
+function onReady() {
+    let first = {
+        text: "Build a CRUD app",
 
+        isComplete: false
+    }
+
+    let second = {
+        text: "Make my app look nice",
+
+        isComplete: false 
+    }
+
+    savetodo(first);
+    savetodo(second);
+}
+
+onReady();
 
 
 function savetodo(todotoAdd) {
@@ -24,12 +41,12 @@ function rendertodo(todos) {
     todoshelf.innerHTML = '';
 
     console.log(todos)
-   
-    for(todo of todos){
+
+    for (todo of todos) {
         // For each book, append a new row to our table
 
-        if(todo.isComplete === false){
-        todoshelf.innerHTML += (`
+        if (todo.isComplete === false) {
+            todoshelf.innerHTML += (`
         <tr data-testid="toDoItem">
         <td>${todo.text}</td>
       <td>${todo.isComplete}</td>
@@ -43,7 +60,7 @@ function rendertodo(todos) {
       `);
         }
 
-        else if(todo.isComplete === true){
+        else if (todo.isComplete === true) {
             todoshelf.innerHTML += (`
             <tr data-testid="toDoItem">
             <td class="completed" data-testid="toDoItem">${todo.text}</td>
@@ -84,17 +101,17 @@ function handleSubmit(event) {
     event.preventDefault();
 
 
-let todo = {};
-  todo.text = document.getElementById("toDoTextInput1").value;
-  
-  todo.isComplete = false;
-  savetodo(todo);
+    let todo = {};
+    todo.text = document.getElementById("toDoTextInput1").value;
+
+    todo.isComplete = false;
+    savetodo(todo);
 
 }
 
 function markComplete(isComplete, todoid) {
 
-    
+
 
     // Use axios to send a PUT request to change song rank
     // Send direction & id in URL
